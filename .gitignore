@@ -210,6 +210,7 @@ __marimo__/
 .vscode/
 
 data/known_face/*
+
 !data/known_face/.gitkeep
 
 data/encodings.pkl
