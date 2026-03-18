@@ -209,9 +209,9 @@ __marimo__/
 # Ignore VS Code workspace settings, which may contain user-specific configurations and should not be shared across different environments.
 .vscode/
 
-data/known_face/*
+data/known_faces/*
 
-!data/known_face/.gitkeep
+!data/known_faces/.gitkeep
 
 data/encodings.pkl
 data/encodings.json 
