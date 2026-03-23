@@ -9,7 +9,7 @@ A real-time facial recognition system built with Python that identifies known in
 - **Dynamic Enrollment**: Automatically prompts for enrollment when an unknown face is detected for 4 seconds, expanding the recognition database on-the-fly.
 - **Visual Feedback**: Displays bounding boxes (green for known, red for unknown) and personalized greeting messages.
 - **Performance Optimized**: Implements frame resizing and efficient encoding for smooth operation.
-- **Robust Handling**: Includes stability features to prevent false enrollments from minor movements or multiple unknowns.
+- **Robust Handling**: Prevents false enrollments from minor movements and processes one unknown face at a time to maintain stability.
 
 ## Tech Stack
 
@@ -42,6 +42,7 @@ A real-time facial recognition system built with Python that identifies known in
 
 3. **Prepare Data Directory**:
    Ensure the `data/known_faces/` directory exists. Place initial face images here (one per person, named as `{name}.jpg`).
+   ⚠️ Important: The system requires at least one face image in `data/known_faces/` to perform recognition. Without it, all faces will be labeled as "Unknown".
 
 4. **Verify Installation**:
    Run a quick test:
@@ -98,9 +99,8 @@ dynamic-face-recognition/
 ├── README.md                 # Project documentation
 ├── requirements.txt          # Python dependencies
 ├── data/
-│   └── known_faces/          # Directory for known face images
-│       ├── john.jpg          # Example known face
-│       └── alice.jpg         # Another example
+│   └── known_faces/          # Directory for known face images (empty by default, add your own)
+│       └── .gitkeep          # Ensures directory is tracked
 └── src/
     ├── main.py               # Main application integrating all features
     ├── webcam_test.py        # Basic webcam functionality test
@@ -136,6 +136,7 @@ Program exited.
 - **Multi-Camera Support**: Extend to handle multiple camera inputs or IP cameras.
 - **Mobile Deployment**: Port to mobile platforms using frameworks like Kivy or React Native.
 - **Advanced Features**: Add emotion detection, age/gender estimation, or integration with access control systems.
+- **System Integration**: Connect Python backend with external systems (e.g., Raspberry Pi rover and C-based display) via API communication.
 - **Performance Enhancements**: Implement GPU acceleration or cloud-based processing for higher frame rates.
 - **Security**: Add encryption for stored face data and secure enrollment verification.
 - **Testing Suite**: Develop comprehensive unit and integration tests for reliability.
